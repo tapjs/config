@@ -1,5 +1,8 @@
 import t from 'tap'
-import { load } from '../src/index'
+import { load, parse } from '../src/index'
+import { parse as PARSE } from '../src/parse'
+
+t.equal(parse, PARSE, 're-exported parse function')
 
 const cwd = process.cwd()
 

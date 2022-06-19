@@ -1,7 +1,8 @@
 import { readFileSync } from 'fs'
 import { resolve } from 'path'
-import { parse } from './parse'
 import getProjectDir from './project-dir'
+export { parse } from './parse'
+import { parse } from './parse'
 
 const loadPkg = () => {
   const pj = resolve(getProjectDir(), 'package.json')

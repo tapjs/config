@@ -5,6 +5,10 @@
     "lib"
   ],
   "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./parse": "./lib/parse.js"
+  },
   "scripts": {
     "prepare": "tsc",
     "format": "prettier --write . --loglevel warn",
