@@ -45,5 +45,6 @@
     ],
     "ts": false
   },
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "https://github.com/tapjs/config"
 }
