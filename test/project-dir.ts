@@ -35,7 +35,11 @@ t.test('already at top', t => {
 
 t.test('outside of everywhere', t => {
   t.teardown(() => process.chdir(cwd))
-  process.chdir(resolve(process.env.TMPDIR || '/tmp'))
+  try {
+    process.chdir(resolve(process.env.TMPDIR || process.env.TEMPDIR || '/tmp'))
+  } catch (e) {
+    process.chdir('/')
+  }
   const h = process.cwd()
   t.equal(projectDir(), h)
   t.end()
@@ -46,7 +50,11 @@ t.test('no home, no problem', t => {
   delete process.env.HOME
   t.teardown(() => { process.env.HOME = HOME })
   t.teardown(() => process.chdir(cwd))
-  process.chdir(resolve(process.env.TMPDIR || '/tmp'))
+  try {
+    process.chdir(resolve(process.env.TMPDIR || process.env.TEMPDIR || '/tmp'))
+  } catch (e) {
+    process.chdir('/')
+  }
   const h = process.cwd()
   t.equal(projectDir(), h)
   t.end()
