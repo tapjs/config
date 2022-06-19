@@ -1,0 +1,45 @@
+{
+  "name": "@tapjs/config",
+  "version": "0.0.0",
+  "scripts": {
+    "prepare": "tsc",
+    "format": "prettier --write . --loglevel warn",
+    "test": "tap test/*.ts",
+    "snap": "tap test/*.ts",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "bracketSameLine": true,
+    "arrowParens": "avoid",
+    "endOfLine": "lf"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/tap": "^15.0.7",
+    "prettier": "^2.7.1",
+    "tap": "^16.3.0",
+    "ts-node": "^10.8.1"
+  },
+  "dependencies": {
+    "@isaacs/cli-env-config": "^1.0.2",
+    "tap-mocha-reporter": "^5.0.3",
+    "treport": "^3.0.3"
+  },
+  "tap": {
+    "coverage-map": "map.js",
+    "node-arg": [
+      "--loader=ts-node/esm",
+      "--no-warnings"
+    ],
+    "ts": false
+  },
+  "license": "ISC"
+}
