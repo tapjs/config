@@ -1,6 +1,10 @@
 {
   "name": "@tapjs/config",
   "version": "0.0.0",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
   "scripts": {
     "prepare": "tsc",
     "format": "prettier --write . --loglevel warn",
